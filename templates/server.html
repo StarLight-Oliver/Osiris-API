@@ -1,0 +1,25 @@
+
+<h1> Server List</h1>
+{% for serverID in serverList %}
+    <h3>{{ serverList[serverID].GetName()}}</h3>
+    <p>IP: {{serverList[serverID].GetIP()}}<br>
+        ID: {{serverList[serverID].GetID()}}<br>
+        Active: {{serverList[serverID].GetStatus()}}
+    </p>
+    <button>Edit Server</button>
+{% endfor %}
+
+<h1>Add Server </h1>
+
+<form method="post">
+    <label for="id">Server ID</label>
+    <br>
+    <input name="id" id="id" required>
+    <br>
+    <label for="name">Server Name</label>
+    <br>
+    <input name="name" id="name" required>
+    <br>
+    <br>
+    <input type="submit" value="Add">
+</form>
